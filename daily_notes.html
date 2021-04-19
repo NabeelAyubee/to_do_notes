@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Daily Notes</title>
+    <style media="screen">
+      body{
+        min-width: 70%;
+        padding: 5%;
+        background-color: #DC7633;
+        overflow-x: hidden;
+        word-wrap: break-word;
+      }
+      h1{
+        text-align: center;
+        background-color: #922B21;
+      }
+      .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #34495E;
+  color: white;
+  text-align: center;
+}
+a{
+  color:white;
+}
+
+
+    </style>
+  </head>
+  <body>
+
+    <h1>Your Notes</h1>
+
+    <ol>
+      {% for note in notes %}
+      <h2>
+          <li>
+            {{note}}
+          </li>
+        {% endfor %}
+      </h2>
+    </ol>
+    <form action="{{ url_for ('index')}}" method="post">
+
+    <input class="form-control" id="exampleFormControlTextarea1" type="text" name="note" rows=3 placeholder="Add your notes here">
+
+    <button type="submit" class="btn btn-primary" value="submit"> Add Note </button>
+
+    </form>
+
+    <div class="footer">
+  <p> Made By: <a href="https://www.linkedin.com/in/md-nabeel-ayubee-62aa431ab/"> Nabeel Ayubee </a> </p>
+</div>
+  </body>
+</html>
